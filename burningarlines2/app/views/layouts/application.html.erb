@@ -7,6 +7,46 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header id="mainnav" class="navbar navbar-default mainnav">
+    <div class="container">
+      <div class="row">
+        <!-- logo -->
+        <div class="col-xs-12 col-sm-3 logo logo-image">
+          <%= image_tag 'todo.png', :class => 'logo-img' %>
+        </div>
+        <!--  end logo -->
+        <nav class="col-xs-12 col-sm-4 mainnav ">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Home', root_path %></li>
+          <% if @current_user.present? %>
+                <% if @current_user.lists.any? %>
+                  <li><%= link_to "lists", list_tasks_path(@current_user.lists.first) %></li>
+                <% else %>
+                  <li><%= link_to "lists", lists_path %></li>
+                <% end %>
+                <li><%= link_to "Log Out #{ @current_user.username}", login_path, :method => :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+          </ul>
+        </nav>
+        <!-- end nav -->
+        <div class="col-xs-12 col-sm-5 login">
+          <%= form_tag '/search' do %>
+            <%= text_field_tag :name,  nil, :autofocus =>true, placeholder: "username" %>
+            <%= password_field_tag :password %>
+            <%= submit_tag 'login' %>
+          <% end %>
+        </div>
+           <% end %>
+      </div>
+
+
+      </div>
+    </div>
+  </header>
+
+
+
 
 <%= yield %>
 

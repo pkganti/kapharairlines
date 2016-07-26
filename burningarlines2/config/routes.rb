@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :flights
   resources :planes
   post '/search' => 'pages#search'
+  # get '/new' => 'users#new'
+  resources :users
 
   get '/login' =>'session#new'
   post '/login' => 'session#create'
