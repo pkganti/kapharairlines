@@ -1,40 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @plane.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @plane.name %>
+  </p>
 
-<p>
-  <strong>Row:</strong>
-  <%= @plane.row %>
-</p>
+  <p>
+    <strong>Row:</strong>
+    <%= @plane.row %>
+  </p>
 
-<p>
-  <strong>Column:</strong>
-  <%= @plane.column %>
-</p>
+  <p>
+    <strong>Column:</strong>
+    <%= @plane.column %>
+  </p>
 
-<table>
-<%(@plane.column).times do |col|%>
-  <tr>
-    <th>
-      <%#(((1..(@plane.row))).to_a).each do |n|%>
-        <%#= n %>
-      <%#end%>
-    <%(@plane.row).times do |row|%>
+  <table>
+  <%(@plane.column).times do |col|%>
+    <tr>
       <th>
-      <td class="planeSeats">
-        <%#(((1..(@plane.column))).to_a).each do |n|%>
+        <%#(((1..(@plane.row))).to_a).each do |n|%>
           <%#= n %>
         <%#end%>
-      </td>
-      </th>
-    <%end%>
-  </th>
-  </tr>
-<%end%>
-</table>
+      <%(@plane.row).times do |row|%>
+        <th>
+        <td class="planeSeats">
+          <%#(((1..(@plane.column))).to_a).each do |n|%>
+            <%#= n %>
+          <%#end%>
+        </td>
+        </th>
+      <%end%>
+    </th>
+    </tr>
+  <%end%>
+  </table>
 
-<%= link_to 'Edit', edit_plane_path(@plane) %> |
-<%= link_to 'Back', planes_path %>
+  <%= link_to 'Edit', edit_plane_path(@plane) %> |
+  <%= link_to 'Back', planes_path %>
+</div>
