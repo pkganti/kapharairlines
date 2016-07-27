@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   post '/search' => 'pages#search'
   # get '/new' => 'users#new'
   resources :users
+  get '/show' => 'users#show'
+  post '/show' => 'users#show'
+
+
 
   get '/login' =>'session#new'
   post '/login' => 'session#create'

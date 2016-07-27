@@ -19,14 +19,10 @@
           <ul class="nav navbar-nav">
             <li><%= link_to 'Home', root_path %></li>
           <% if @current_user.present? %>
-                <% if @current_user.lists.any? %>
-                  <li><%= link_to "lists", list_tasks_path(@current_user.lists.first) %></li>
-                <% else %>
-                  <li><%= link_to "lists", lists_path %></li>
-                <% end %>
-                <li><%= link_to "Log Out #{ @current_user.username}", login_path, :method => :delete %></li>
+                <li><%= link_to "Log Out #{ @current_user.name}", login_path, :method => :delete %></li>
           <% else %>
             <li><%= link_to "Sign Up", new_user_path %></li>
+          <% end %>
           </ul>
         </nav>
         <!-- end nav -->
@@ -37,7 +33,6 @@
             <%= submit_tag 'login' %>
           <% end %>
         </div>
-           <% end %>
       </div>
 
 
