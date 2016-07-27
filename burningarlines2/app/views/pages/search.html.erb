@@ -1,1 +1,38 @@
-<h1>Search here bb goes here</h1>
+<div class="row">
+  <h1>Kaphar Airlines</h1>
+
+  <select class="from">
+    <option>From</option>
+  </select>
+   <select class="to">
+    <option>To</option>
+  </select>
+  <button class="search">Search</button>
+</div>
+<div id="main"></div>
+<script type="text/template" id="flightTable">
+  <table>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Date</th>
+        <th>Plane</th>
+        <th>Seats</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%# @flights.each do |flight| %>
+        <tr>
+          <td id="flightNumber">{{= flight.number }}</td>
+          <td>{{= flight.origin }}</td>
+          <td>{{= flight.destination }}</td>
+          <td>{{= flight.date }}</td>
+          <td>{{= flight.plane.name }}</td>
+        </tr>
+      <%# end %>
+    </tbody>
+  </table>
+</script>
