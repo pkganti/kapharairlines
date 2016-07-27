@@ -15,24 +15,45 @@
     <strong>Column:</strong>
     <%= @plane.column %>
   </p>
+  <!-- <div><div></div><%(@plane.row).times do |row|%>
+  <div><%= row+1 %></div>
+  <% end %>
+</div>
+    <%(@plane.column).times do |col|%>
+      <div>
+          <%#(((1..(@plane.row))).to_a).each do |n|%>
+            <%#= n %>
+          <%#end%>
+        <div><%= col+1 %></div>
+        <%(@plane.row).times do |row|%>
+          <div class="planeSeats">
+
+            <%#(((1..(@plane.column))).to_a).each do |n|%>
+              <%#= n %>
+            <%#end%>
+          </div>
+        <%end%>
+      </div>
+    <%end%> -->
 
   <table>
+<tr><td></td><%(@plane.row).times do |row|%>
+<td><%= row+1 %></td>
+<% end %>
+</tr>
   <%(@plane.column).times do |col|%>
     <tr>
-      <th>
         <%#(((1..(@plane.row))).to_a).each do |n|%>
           <%#= n %>
         <%#end%>
+      <td><%=(('A'..'Z').to_a)[col] %></td>
       <%(@plane.row).times do |row|%>
-        <th>
         <td class="planeSeats">
           <%#(((1..(@plane.column))).to_a).each do |n|%>
             <%#= n %>
           <%#end%>
         </td>
-        </th>
       <%end%>
-    </th>
     </tr>
   <%end%>
   </table>
