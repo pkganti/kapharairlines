@@ -8,7 +8,26 @@
   <!-- <button class="search" id="search">Search</button></div> -->
 
 <div id="main"></div>
-<div id="flightlist"></div>
+<div id="flightlist">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Date</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+    <tbody id="flightTableBody">
+      <%# @flights.each do |flight| %>
+
+      <%# end %>
+    </tbody>
+  </table>
+
+</div>
 <!-- template  -->
 <script  type="text/template" id="default" >
 
@@ -22,8 +41,6 @@
         <th>Origin</th>
         <th>Destination</th>
         <th>Date</th>
-        <th>Plane</th>
-        <th>Seats</th>
         <th colspan="4"></th>
       </tr>
     </thead>

@@ -13,11 +13,17 @@ app.FlightView = Backbone.View.extend({
     var destinationInput = $(".to").val();
 
     var results = app.showflights.where({origin: originInput, destination: destinationInput});
+    console.log(results);
     _.each(results, function(r){
-      var flight = $("<td>");
-          flight.attr("value", r.name);
-          flight.text(r.origin);
-          $("#flighttable").append(flight);
+      var number = $("<td>");
+      var origin = $("<td>");
+      var destination = $("<td>");
+      var date = $("<td>");
+          date.text(r.get('date'));
+          number.text(r.get('number'));
+          origin.text(r.get('origin'));
+          destination.text(r.get('destination'));
+          $("#flightTableBody").append(number).append(origin).append(destination).append(date).append('<tr>');
       });
       // this.$el.html(flightViewTemplater( r));
 
