@@ -8,6 +8,7 @@ app.AppRouter = Backbone.Router.extend({
 
   search: function () {
     var appView = new app.AppView({collection: app.showflights}); //coming from our js file
+    appView.render();
   },
 
   chosenFlight: function () {
