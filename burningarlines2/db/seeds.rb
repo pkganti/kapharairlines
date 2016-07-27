@@ -1,5 +1,5 @@
 User.destroy_all
-u1 = User.create(:name => "Armando", :password => "chicken")
+u1 = User.create(:name => "Armando", :password => "chicken", :admin => true)
 u2 = User.create(:name => "Phani", :password => "chicken")
 u3 = User.create(:name => "Katrina", :password => "chicken")
 

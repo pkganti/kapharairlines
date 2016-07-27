@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
 
-  before_action :authorise_user, :only => [:search] # need to check if the search is good path
-
   def new
     @user = User.new
   end
 
   def show
-    raise "hell"
     @user = User.find params[:id]
   end
 

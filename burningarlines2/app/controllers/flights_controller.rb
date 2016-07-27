@@ -1,5 +1,8 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  before_action :check_for_user
+  before_action :authorize_admin
+
 
   # GET /flights
   # GET /flights.json
@@ -71,5 +74,9 @@ class FlightsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
       params.require(:flight).permit(:number, :origin, :destination, :date)
+    end
+
+    def authorize_admin
+      redirect_to search_path unless @current_user.present? && @current_user.admin?
     end
 end
