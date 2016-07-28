@@ -13,18 +13,17 @@ $(document).ready(function () { // Wait until the document has finished loading
 
    // Abort and don't start the Backbone app if we're not on the Backbone single page application page.
 
-
-
-
    if ( $('#main').length === 0 ) { return; }
    //
   //  var url = 'http://localhost:3000/flights';
-
-   app.showflights = new app.Flights(); // Instantiate our new empty collection of posts
+  app.showplanes = new app.Planes();
+  app.showplanes.fetch();
+  app.showflights = new app.Flights(); // Instantiate our new empty collection of posts
    app.showflights.fetch().done(function () {
      var originArr=[];
      var destArr=[];
      var jsondata = app.showflights.models;
+     
      _.each(jsondata, function(p){
 
          originArr.push(p.attributes.origin);

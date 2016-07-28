@@ -3,17 +3,18 @@ var app = app || {};
 app.AppView = Backbone.View.extend({
   el: '#main',
   events:{
-    'click': 'showflights'
+    'click button': 'showflights',
+
   },
 
   render: function(){
     // debugger;
     var content = $('#default').html();
     this.$el.html( content);
-    //  this.collection.each(function (f){
-    //    var flightListView = new app.FlightListView({model: f});
-    //    flightListView.render();
-    //  });
+     this.collection.each(function (f){
+       var flightListView = new app.FlightListView({model: f});
+       flightListView.render();
+     });
   },
   showflights: function(){
 
@@ -25,5 +26,7 @@ app.AppView = Backbone.View.extend({
       var flightlist = new app.FlightView();
       flightlist.render();
 
-  }
+  },
+  
+
 });

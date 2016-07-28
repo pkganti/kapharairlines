@@ -1,7 +1,7 @@
 class PlanesController < ApplicationController
   before_action :set_plane, only: [:show, :edit, :update, :destroy]
   before_action :check_for_user
-  before_action :authorize_admin
+  before_action :authorize_admin, only: [:create, :destroy, :new]
 
   # GET /planes
   # GET /planes.json
