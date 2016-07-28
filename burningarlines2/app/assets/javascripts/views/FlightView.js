@@ -2,18 +2,21 @@ var app = app || {};
 
 app.FlightView = Backbone.View.extend({
   el: '#flightlist',
-
+  events: {
+    'click a': 'showplanes'
+  },
 
   render: function() {
+    $("#flightTableBody").empty();
     var flightViewTemplate = $("#flightTable").html();
-    console.log(flightViewTemplate);
+
     var flightViewTemplater = _.template(flightViewTemplate);
-    console.log(flightViewTemplater);
+
     var originInput = $(".from").val();
     var destinationInput = $(".to").val();
 
     var results = app.showflights.where({origin: originInput, destination: destinationInput});
-    console.log(results);
+
     _.each(results, function(r){
       var number = $("<td>");
       var origin = $("<td>");
@@ -23,22 +26,23 @@ app.FlightView = Backbone.View.extend({
 
       var url = "http://localhost:3000/planes/"+r.get('id');
 
-      var aTag = $('<a>', {href: url });
+      var aTag = $('<a flight="' + r.get('id') + '">', {href: "#" });
       aTag.text(r.get('number'));// Populate the text with what's already there
       number.text('').append(aTag);
 
       origin.text(r.get('origin'));
       destination.text(r.get('destination'));
-      var $row = $("#flightTableBody").append('<tr>');
-      $row.append(number).append(origin).append(destination).append(date);//
+
+      $("#flightTableBody").append(number).append(origin).append(destination).append(date).append('<tr>');//
 
       });
-      // this.$el.html(flightViewTemplater( r));
+
+    },
+
+    showplanes: function(t){
+      app.router.navigate('/planes/' + $(t.target).attr('flight'), true);
+    }
 
 
-
-
-
-  }
 
 });
