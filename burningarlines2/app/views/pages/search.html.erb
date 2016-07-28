@@ -1,6 +1,6 @@
-<div class="search">
+<div class="col-xs-12 col-md-6 col-md-offset-3 search">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3 searchForm">
+    <div class="searchForm">
       <h1>Kaphar Airlines</h1>
       <select class="from">
         <option>From</option>
@@ -10,12 +10,10 @@
       </select>
       <!-- <button class="search" id="search">Search</button></div> -->
     </div>
-  </div>
-
-
-    <div id="main"></div>
-    <div id="flightlist">
-
+    <div class="searchMain">
+      <div id="main"></div>
+    </div>
+    <div class="searchTable">
       <table>
         <thead>
           <tr>
@@ -27,6 +25,7 @@
           </tr>
         </thead>
         <tbody id="flightTableBody">
+
           <%# @flights.each do |flight| %>
 
           <%# end %>
@@ -34,10 +33,17 @@
       </table>
     </div>
   </div>
+    <div class="searchMain">
+      <div id="flightlist"></div>
+    </div>
+  </div>
+<!--////////////////////////////////////// -->
+<!--////////////////////////////////////// -->
+
 <!-- template  -->
 <script  type="text/template" id="default" >
 
-  <button class="search" id="search">Search</button>
+  <button class="searchButton" id="search">Search</button>
 </script>
 <script type="text/template" id="flightTable">
   <table>

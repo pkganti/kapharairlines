@@ -22,6 +22,7 @@ app.AppView = Backbone.View.extend({
       // var flightViewTemplate = $("#flightTable").html();
       // var flightViewTemplater = _.template(flightViewTemplate);
       // this.$el.html(flightViewTemplater( this.model.toJSON() ));
+      $('.searchTable').show();
       var flightlist = new app.FlightView();
       flightlist.render();
 

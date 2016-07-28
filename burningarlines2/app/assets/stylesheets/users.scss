@@ -179,14 +179,48 @@ p {
     }
 }
 //=============== search form ===============
-.searchForm {
+.search {
     text-align: center;
-    select {
-        width: 200px;
-        font-size: 20px;
-        background-color: $light-grey;
-        border-width: 1px;
-        border-style: solid;
-        border-color: $onyx !important;
+    .searchForm {
+        text-align: center;
+        select {
+            width: 200px;
+            font-size: 20px;
+            background-color: $light-grey;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $onyx !important;
+        }
+    }
+    .searchMain {
+        margin-top: 20px;
+        .searchButton {
+            width: 400px;
+            padding: 10px;
+            background-color: $green;
+            color: $white;
+            font-size: $f20;
+            font-f: $josefin;
+            border: 1px solid $green;
+            &:hover {
+                color: $green;
+                background-color: $white;
+            }
+        }
+    }
+    .searchTable {
+        display: none;
+        margin-top: 20px;
+        table {
+            display: inline;
+            th {
+                text-align: center;
+                padding-left: 60px;
+                font-size: $f20;
+            }
+            td: {
+                font-size: 17px;
+            }
+        }
     }
 }

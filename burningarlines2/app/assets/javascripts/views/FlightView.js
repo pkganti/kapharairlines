@@ -29,8 +29,9 @@ app.FlightView = Backbone.View.extend({
 
       origin.text(r.get('origin'));
       destination.text(r.get('destination'));
-      $("#flightTableBody").append(number).append(origin).append(destination).append(date).append('<tr>');//
-      
+      var $row = $("#flightTableBody").append('<tr>');
+      $row.append(number).append(origin).append(destination).append(date);//
+
       });
       // this.$el.html(flightViewTemplater( r));
 
