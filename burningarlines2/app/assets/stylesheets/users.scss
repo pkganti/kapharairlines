@@ -17,6 +17,7 @@ $josefin: 'Josefin Sans', sans-serif;
 /*========= FONT SIZE =======*/
 $f20: 20px;
 $fp: 14px;
+$fh1: 35px;
 /*================================================================================*/
 /*===========================   Styles ==========================================*/
 //=============== global ===============
@@ -25,6 +26,7 @@ h1 {
     font-weight: 400;
     color: $onyx;
     text-align: center;
+    font-size: $fh1;
 }
 p {
     font-family: $lato;
@@ -61,6 +63,13 @@ p {
                 }
             }
         }
+    }
+}
+//=============== home  ===============
+.home-header {
+    h1 {
+        margin: 40px 0;
+        font-size: 40px;
     }
 }
 //=============== Sign up FORM ===============
@@ -181,8 +190,13 @@ p {
 //=============== search form ===============
 .search {
     text-align: center;
+    margin-top: 50px;
     .searchForm {
+        margin: 40px 0;
         text-align: center;
+        h1 {
+            margin-bottom: 30px;
+        }
         select {
             width: 200px;
             font-size: 20px;
@@ -213,13 +227,29 @@ p {
         margin-top: 20px;
         table {
             display: inline;
-            th {
-                text-align: center;
-                padding-left: 60px;
-                font-size: $f20;
-            }
-            td: {
-                font-size: 17px;
+        }
+        th {
+            text-align: center;
+            padding-right: 50px;
+            font-size: $f20;
+        }
+        td {
+            padding: 15px 0 !important;
+            text-align: left;
+            font-size: 15px;
+            color: $onyx;
+            a {
+                background-color: $green;
+                color: $white;
+                font-f: $josefin;
+                border: 1px solid $green;
+                text-decoration: none;
+                padding: 5px;
+                cursor: pointer;
+                &:hover {
+                    color: $green;
+                    background-color: $white;
+                }
             }
         }
     }

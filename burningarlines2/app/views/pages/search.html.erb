@@ -73,7 +73,20 @@
 
 <!-- template  -->
 <script type="text/template" id="planeInfo">
-  
+  <div class="legends">
+      <input id="legAvailable" type="checkbox" disabled />
+      <label for="legAvailable"> Available</label>
+      <input id="legAvailable" type="checkbox" data-status="notavailable" disabled />
+      <label for="legAvailable"> Not Available</label>
+      <input id="legBooked" type="checkbox" data-status="booked" checked disabled />
+      <label for="legBooked"> Booked</label>
+      <input id="legBooked" type="checkbox" checked disabled />
+      <label for="legBooked"> Selected</label>
+  </div>
+
+  <div id="seats">
+
+  </div>
 
 </script>
 <!-- end template  -->
