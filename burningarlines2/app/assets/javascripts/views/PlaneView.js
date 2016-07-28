@@ -13,7 +13,7 @@ app.PlaneView = Backbone.View.extend({
     console.log(rows);
     var columns = plane.get("column");
     console.log(columns);
-    
+     
 
   }
 });
