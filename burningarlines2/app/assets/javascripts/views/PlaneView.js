@@ -5,18 +5,6 @@ app.PlaneView = Backbone.View.extend({
 
 
 render: function(planeId){
-// debugger;
-<<<<<<< HEAD
-    var planeViewTemplate = $("#planeInfo").html();
-    var planeViewTemplater = _.template(planeViewTemplate);
-
-    var plane = app.showplanes.findWhere({id: parseInt(planeId)});
-    var rows = plane.get("row");
-    console.log(rows);
-    var columns = plane.get("column");
-    console.log(columns);
-     
-=======
   var planeViewTemplate = $("#planeInfo").html();
   var planeViewTemplater = _.template(planeViewTemplate);
 
@@ -75,7 +63,6 @@ render: function(planeId){
                 theme: 'tooltipster-shadow'
             });
         });
->>>>>>> 6d7df919ed79c846b2a483948c415c41169861fb
 
   }
 });
