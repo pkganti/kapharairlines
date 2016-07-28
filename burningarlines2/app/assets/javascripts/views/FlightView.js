@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.FlightView = Backbone.View.extend({
-  el: '#flightlist',
+  el: '#flightTableBody',
   events: {
     'click a': 'showplanes'
   },
@@ -40,6 +40,7 @@ app.FlightView = Backbone.View.extend({
     },
 
     showplanes: function(t){
+      // debugger;
       app.router.navigate('/planes/' + $(t.target).attr('flight'), true);
     }
 
