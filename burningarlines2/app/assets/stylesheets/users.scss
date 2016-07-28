@@ -27,6 +27,14 @@ h1 {
     color: $onyx;
     text-align: center;
     font-size: $fh1;
+    margin: 40px 0;
+}
+h2 {
+    font-family: $josefin;
+    font-weight: 400;
+    color: $onyx;
+    text-align: center;
+    font-size: $fh1;
 }
 p {
     font-family: $lato;
@@ -64,6 +72,10 @@ p {
             }
         }
     }
+}
+//=============== slider ================
+.carousel-caption {
+    background-color: transparent !important;
 }
 //=============== home  ===============
 .home-header {
@@ -109,7 +121,7 @@ p {
             width: 100%;
             border: none;
             border-radius: 0;
-            border-bottom: 1px solid #757575;
+            // border-bottom: 1px solid #757575;
             &:focus {
                 outline: none;
             }
@@ -171,6 +183,7 @@ p {
     input:focus ~ .bar:after,
     input:focus ~ .bar:before {
         width: 50%;
+        background-color: transparent !important;
     }
     /* Highlight */
     .highlight {
@@ -185,6 +198,12 @@ p {
     /* active */
     input:focus ~ .highlight {
         animation: inputHighlighter 0.3s ease;
+    }
+    input:focus {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important; //0 0 6px #FAFAFA !important;
+        border-bottom: 2px solid $green !important;
     }
 }
 //=============== search form ===============
@@ -251,6 +270,35 @@ p {
                     background-color: $white;
                 }
             }
+        }
+    }
+}
+//=============== FLIGHTS ===============
+table {
+    display: inline;
+}
+th {
+    text-align: center;
+    padding-right: 50px;
+    font-size: $f20;
+}
+td {
+    padding: 15px 8px !important;
+    text-align: left;
+    font-size: 15px;
+    color: $onyx;
+    a {
+        background-color: $green;
+        color: $white !important;
+        font-f: $josefin;
+        border: 1px solid $green;
+        text-decoration: none;
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+            color: $green !important;
+            background-color: $white;
+            text-decoration: none;
         }
     }
 }
