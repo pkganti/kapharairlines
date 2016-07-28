@@ -15,6 +15,8 @@
 //= require underscore
 //= require backbone
 //= require bootstrap-sprockets
+//= require flexiseats
+//= require jquery.tooltipster.min
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./routers
